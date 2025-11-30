@@ -32,8 +32,9 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // DbContext
+var connectionString = Environment.GetEnvironmentVariable("postgresql://postgres:OuPChymOAcMLBqUDtMSBURIxCvTahgAx@postgres.railway.internal:5432/railway");
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(connectionString));
 
 // Добавляем MemoryCache (для кеширования рекомендаций 6 часов)
 builder.Services.AddMemoryCache();
