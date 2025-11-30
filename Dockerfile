@@ -6,7 +6,7 @@ WORKDIR /src
 COPY . .
 
 # 2. Восстанавливаем и публикуем через solution file
-RUN dotnet restore "PriceForecastingSystem.sln"
+RUN dotnet restore "PriceForecasting.API/PriceForecastingSystem.sln"
 RUN dotnet publish "PriceForecasting.API/PriceForecasting.API/PriceForecasting.API.csproj" -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
