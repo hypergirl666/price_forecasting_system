@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = createEmptyCard(article);
 
     try {
-      const res = await fetch(`priceforecastingsystem.railway.internal/api/price/${article}`);
+      const res = await fetch(`priceforecastingsystem.up.railway.app/api/products/${article}`);
       const priceInfo = await res.json();
 
       card.querySelector(".info").textContent =
